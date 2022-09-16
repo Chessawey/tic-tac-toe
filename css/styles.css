@@ -22,7 +22,6 @@ h1 {
   color: #ee6983;
   font-size: 7rem;
   text-transform: uppercase;
-  /* margin-top: 2rem; */
   padding-top: 2.5rem;
 }
 
@@ -35,29 +34,6 @@ h1 {
   font-weight: 500;
   margin-top: 2rem;
 }
-
-/* .choose-one {
-  display: flex;
-  justify-content: center;
-}
-
-.choices button {
-  color: white;
-  font-weight: 700;
-  font-size: 2rem;
-  text-transform: uppercase;
-  border: none;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  align-items: center;
-  margin-top: 1rem;
-  background-color: #ee6983;
-}
-
-.choices button:hover {
-  cursor: pointer;
-  color: #7209b7;
-} */
 
 .board {
   display: grid;
@@ -84,9 +60,6 @@ h1 {
   color: #ee6983;
 }
 
-/* .box:hover {
-  background-color: #ee6983;
-} */
 
 .score {
   color: #ee6983;
