@@ -25,6 +25,10 @@ h1 {
   padding-top: 2.5rem;
 }
 
+span {
+  color: #C3FF99;
+}
+
 #status {
   padding-bottom: 1rem;
   color: white;
@@ -78,7 +82,7 @@ h1 {
 .reset-button {
   color: #C3FF99;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   border: none;
   padding: 1rem 1.5rem;
@@ -91,4 +95,53 @@ h1 {
 .reset-button:hover {
   background-color: #9FC9F3;
   color: #ee6983;
+}
+
+#stats ol {
+  list-style-position: inside;
+}
+
+#moves {
+  visibility: hidden;
+  opacity: 0;
+  grid-area: history;
+  justify-self: center;
+}
+
+#moves.show {
+  visibility: visible;
+  opacity: 1;
+  transition: 800ms;
+}
+
+#moves h2 {
+  color: white;
+}
+
+#moves ol {
+  list-style-position: inside;
+  color: white;
+}
+
+/* #history {
+  visibility: hidden;
+  opacity: 0;
+  width: 50%;
+  padding: 1rem 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+} */
+
+#history.show {
+  visibility: visible;
+  opacity: 1;
+  transition: 800ms 1s;
+}
+
+
+#history {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
 }

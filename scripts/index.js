@@ -1,6 +1,14 @@
-let playerText = document.querySelector('#playerText');
-let restartBtn = document.querySelector('#restartBtn');
-let boxes = document.querySelectorAll('.box');
+const playerText = document.querySelector('#playerText');
+const restartBtn = document.querySelector('#restartBtn');
+const boxes = document.querySelectorAll('.box');
+//////////
+const history = document.querySelector('#history');
+const newGameBtn = document.querySelector('.new-game');
+const moveHistory = document.querySelector('#moves > ol');
+const moves = document.querySelector('#moves');
+const xScore = document.querySelector(".xScore")
+const oScore = document.querySelector(".oScore")
+//////////
 
 let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
 
@@ -10,10 +18,14 @@ const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
 let spaces = Array(9).fill(null);
+let scoreOfX = 0
+let scoreOfO = 0
+let gameOver = false
 
 const startGame = () => {
   boxes.forEach(box => box.addEventListener('click', boxClicked));
 }
+
 
 function boxClicked(e) {
   const id = e.target.id
@@ -21,17 +33,27 @@ function boxClicked(e) {
   if (!spaces[id]) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
+    // if 
 
     if (playerHasWon() !== false) {
-      playerText = `${currentPlayer} has Won!`;
+      playerText.textContent = `${currentPlayer} has Won!`;
       let winning_blocks = playerHasWon();
-
       winning_blocks.map(box => boxes[box].style.backgroundColor = winnerIndicator);
+      boxes.forEach((box) => {
+        box.style.pointerEvents = "none"
+      })
+      if (currentPlayer === X_TEXT) {
+        scoreOfX++
+      } else {
+        scoreOfO++
+      }
+      xScore.textContent = `X-SCORE: ${scoreOfX}`
+      oScore.textContent = `O-SCORE: ${scoreOfO}`
       return
     }
 
-    currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
   }
+  currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
 }
 
 const winningCombos = [
@@ -64,6 +86,7 @@ function restart() {
   boxes.forEach(box => {
     box.innerText = '';
     box.style.backgroundColor = '';
+    box.style.pointerEvents = "auto"
   })
 
   playerText = 'Tic Tac Toe';
@@ -72,3 +95,5 @@ function restart() {
 }
 
 startGame()
+
+////////
