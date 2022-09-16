@@ -19,8 +19,11 @@
 <body>
 
   <div class="container">
-    <h1>TIC-TAC-TOE</h1>
-    <div id="status">
+    <h1 id="playerText">TIC-TAC-TOE</h1>
+    <div class="reset">
+      <button id="restartBtn" class="reset-button">RESET</button>
+    </div>
+    <!-- <div id="status">
       <div class="choose-one">
         Please choose
       </div>
@@ -30,17 +33,17 @@
         <button class="choice-button">O</button>
       </div>
       <p class="hide"></p>
-    </div>
-    <div class="board" id="board">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+    </div> -->
+    <div class="board" id="gameboard">
+      <div id="0" class="box"></div>
+      <div id="1" class="box"></div>
+      <div id="2" class="box"></div>
+      <div id="3" class="box"></div>
+      <div id="4" class="box"></div>
+      <div id="5" class="box"></div>
+      <div id="6" class="box"></div>
+      <div id="7" class="box"></div>
+      <div id="8" class="box"></div>
     </div>
   </div>
   <div id="stats" class="score">
@@ -51,10 +54,6 @@
       <p>O-SCORE:</p>
     </div>
   </div>
-  <div class="reset">
-    <button class="reset-button">RESET</button>
-  </div>
-
 </body>
 
 </html>

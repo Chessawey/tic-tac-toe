@@ -1,28 +1,12 @@
-"use strict";
+let playerText = document.querySelector('#playerText');
+let restartBtn = document.querySelector('#restartBtn');
+let boxes = document.querySelectorAll('.box');
 
-const boxes = document.querySelectorAll(".box");
-const status = document.querySelector("#status");
-const choices = document.querySelector(".choices");
-const boxContainer = document.querySelector("#board");
-const stats = document.querySelector("#stats");
-const stat = document.querySelector('#status p')
-const reset = document.querySelector("#stats");
+let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-clocks');
 
-let isPlayerX = true;
-let board = [
-  [],
-  [],
-  []
-];
+console.log(boxes);
 
-boxes.forEach((box) => {
-  box.addEventListener("click", () => {
-    if (isPlayerX) {
-      box.textContent = "X";
-      isPlayerX = false;
-    } else {
-      box.textContent = "O";
-      isPlayerX = true;
-    }
-  });
-});
+const O_TEXT = "O";
+const X_TEXT = "X";
+let currentPlayer = X_TEXT;
+let spaces = Array(9).fill(null);
