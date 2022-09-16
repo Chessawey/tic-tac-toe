@@ -2,7 +2,7 @@ let playerText = document.querySelector('#playerText');
 let restartBtn = document.querySelector('#restartBtn');
 let boxes = document.querySelectorAll('.box');
 
-let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-clocks');
+let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
 
 console.log(boxes);
 
@@ -12,7 +12,7 @@ let currentPlayer = X_TEXT;
 let spaces = Array(9).fill(null);
 
 const startGame = () => {
-  boxes.forEach(box => addEventListener('click', boxClicked));
+  boxes.forEach(box => box.addEventListener('click', boxClicked));
 }
 
 function boxClicked(e) {
@@ -55,3 +55,20 @@ function playerHasWon() {
   }
   return false;
 }
+
+restartBtn.addEventListener('click', restart);
+
+function restart() {
+  spaces.fill(null);
+
+  boxes.forEach(box => {
+    box.innerText = '';
+    box.style.backgroundColor = '';
+  })
+
+  playerText = 'Tic Tac Toe';
+
+  currentPlayer = X_TEXT;
+}
+
+startGame()
