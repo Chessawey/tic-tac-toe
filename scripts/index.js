@@ -123,3 +123,12 @@ next.addEventListener("click", () => {
     boxes[i].textContent = historyList[counter - 1][i]
   }
 })
+
+function showButtons() {
+  if (playerHasWon() === true) {
+    previous.classList.add('show');
+    next.classList.add('show');
+  }
+}
+
+showButtons();
