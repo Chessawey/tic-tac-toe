@@ -98,20 +98,7 @@ span {
   color: #ee6983;
 }
 
-.previous {
-  color: #C3FF99;
-  font-weight: 700;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  border: none;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  background-color: #ee6983;
-  cursor: pointer;
-  margin-top: 3rem;
-}
-
-
+.previous,
 .next {
   color: #C3FF99;
   font-weight: 700;
@@ -123,6 +110,15 @@ span {
   background-color: #ee6983;
   cursor: pointer;
   margin-top: 3rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.previous,
+.next {
+  visibility: visible;
+  opacity: 1;
+  transition: 800ms 1s;
 }
 
 .x-score {
@@ -136,9 +132,3 @@ span {
   border-radius: 10px;
   padding: 1rem 1.5rem;
 }
-
-/* #history {
-  display: flex;
-  justify-content: space-around;
-
-} */
