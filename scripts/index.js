@@ -35,10 +35,9 @@ function boxClicked(e) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
     historyList.push(JSON.parse(JSON.stringify(spaces)))
-    // if 
 
     if (playerHasWon() !== false) {
-      playerText.textContent = `${currentPlayer} has Won!`;
+      playerText.textContent = `Game Over. ${currentPlayer} has Won!`;
       let winning_blocks = playerHasWon();
       winning_blocks.map(box => boxes[box].style.backgroundColor = winnerIndicator);
       boxes.forEach((box) => {
@@ -95,7 +94,7 @@ function restart() {
   historyList = []
   counter = 0
 
-  playerText = 'Tic Tac Toe';
+  playerText.textContent = 'Tic Tac Toe';
 
   currentPlayer = X_TEXT;
 }
@@ -126,9 +125,7 @@ next.addEventListener("click", () => {
 
 function showButtons() {
   if (playerHasWon() === true) {
-    previous.classList.add('show');
-    next.classList.add('show');
+    previous.classList.add('previous.show');
+    next.classList.add('.next.show');
   }
 }
-
-showButtons();
