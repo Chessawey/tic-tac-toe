@@ -9,7 +9,7 @@ const xScore = document.querySelector(".xScore")
 const oScore = document.querySelector(".oScore")
 
 
-let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
+// let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
 
 console.log(boxes);
 
@@ -17,11 +17,11 @@ const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
 let spaces = Array(9).fill(null);
-let scoreOfX = 0
-let scoreOfO = 0
-let gameOver = false
-let historyList = []
-let counter = 0
+let scoreOfX = 0;
+let scoreOfO = 0;
+let historyList = [];
+let counter = 0;
+
 
 const startGame = () => {
   boxes.forEach(box => box.addEventListener('click', boxClicked));
@@ -37,9 +37,9 @@ function boxClicked(e) {
     historyList.push(JSON.parse(JSON.stringify(spaces)))
 
     if (playerHasWon() !== false) {
+      previous.classList.add('show');
+      next.classList.add('show');
       playerText.textContent = `Game Over. ${currentPlayer} has Won!`;
-      let winning_blocks = playerHasWon();
-      winning_blocks.map(box => boxes[box].style.backgroundColor = winnerIndicator);
       boxes.forEach((box) => {
         box.style.pointerEvents = "none"
       })
@@ -50,6 +50,7 @@ function boxClicked(e) {
       }
       xScore.textContent = `X-SCORE: ${scoreOfX}`
       oScore.textContent = `O-SCORE: ${scoreOfO}`
+
       return
     }
 
@@ -75,6 +76,7 @@ function playerHasWon() {
     if (spaces[a] && (spaces[a] === spaces[b] && spaces[a] === spaces[c])) {
       return [a, b, c];
     }
+
   }
   return false;
 }
@@ -90,7 +92,6 @@ function restart() {
     box.style.pointerEvents = "auto"
   })
 
-  gameOver = false
   historyList = []
   counter = 0
 
@@ -114,6 +115,9 @@ previous.addEventListener("click", () => {
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].textContent = historyList[counter - 1][i]
   }
+  boxes.forEach(box => {
+    box.style.backgroundColor = '';
+  })
 })
 
 next.addEventListener("click", () => {
@@ -122,10 +126,3 @@ next.addEventListener("click", () => {
     boxes[i].textContent = historyList[counter - 1][i]
   }
 })
-
-function showButtons() {
-  if (playerHasWon() === true) {
-    previous.classList.add('previous.show');
-    next.classList.add('.next.show');
-  }
-}

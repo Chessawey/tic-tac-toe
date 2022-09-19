@@ -114,11 +114,10 @@ span {
   opacity: 0;
 }
 
-.previous.show,
-.next.show {
+.show {
   visibility: visible;
   opacity: 1;
-  transition: 800ms 1s;
+  transition: all 1s;
 }
 
 .x-score {
