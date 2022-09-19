@@ -107,11 +107,7 @@ const next = document.querySelector(".next")
 
 previous.addEventListener("click", () => {
   counter--;
-  // boxes.forEach((box) => {
-  //   spaces.forEach((space) => {
-  //     box.textContent = historyList[counter -1][box]
-  //   })
-  // })
+
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].textContent = historyList[counter - 1][i]
   }
