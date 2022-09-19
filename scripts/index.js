@@ -91,6 +91,10 @@ function restart() {
     box.style.pointerEvents = "auto"
   })
 
+  gameOver = false
+  historyList = []
+  counter = 0
+
   playerText = 'Tic Tac Toe';
 
   currentPlayer = X_TEXT;
