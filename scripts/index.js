@@ -116,3 +116,10 @@ previous.addEventListener("click", () => {
     boxes[i].textContent = historyList[counter - 1][i]
   }
 })
+
+next.addEventListener("click", () => {
+  counter++;
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].textContent = historyList[counter - 1][i]
+  }
+})
