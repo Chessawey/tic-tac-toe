@@ -22,7 +22,7 @@ h1 {
   color: #ee6983;
   font-size: 7rem;
   text-transform: uppercase;
-  padding-top: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 span {
@@ -71,12 +71,13 @@ span {
   display: flex;
   justify-content: space-around;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .reset {
   display: flex;
   justify-content: center;
+  gap: 4rem;
 }
 
 .reset-button {
@@ -97,51 +98,46 @@ span {
   color: #ee6983;
 }
 
-#stats ol {
-  list-style-position: inside;
+.previous {
+  color: #C3FF99;
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background-color: #ee6983;
+  cursor: pointer;
+  margin-top: 3rem;
 }
 
-#moves {
-  visibility: hidden;
-  opacity: 0;
-  grid-area: history;
-  justify-self: center;
+.next {
+  color: #C3FF99;
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background-color: #ee6983;
+  cursor: pointer;
+  margin-top: 3rem;
 }
 
-#moves.show {
-  visibility: visible;
-  opacity: 1;
-  transition: 800ms;
+.x-score {
+  background-color: #C3FF99;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
 }
 
-#moves h2 {
-  color: white;
-}
-
-#moves ol {
-  list-style-position: inside;
-  color: white;
+.o-score {
+  background-color: #C3FF99;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
 }
 
 /* #history {
-  visibility: hidden;
-  opacity: 0;
-  width: 50%;
-  padding: 1rem 0;
-  margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
 } */
-
-#history.show {
-  visibility: visible;
-  opacity: 1;
-  transition: 800ms 1s;
-}
-
-
-#history {
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
-}

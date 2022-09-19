@@ -1,14 +1,13 @@
 const playerText = document.querySelector('#playerText');
 const restartBtn = document.querySelector('#restartBtn');
 const boxes = document.querySelectorAll('.box');
-//////////
-const history = document.querySelector('#history');
+// const history = document.querySelector('#history');
 const newGameBtn = document.querySelector('.new-game');
 const moveHistory = document.querySelector('#moves > ol');
-const moves = document.querySelector('#moves');
+// const moves = document.querySelector('#moves');
 const xScore = document.querySelector(".xScore")
 const oScore = document.querySelector(".oScore")
-//////////
+
 
 let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
 
@@ -21,6 +20,8 @@ let spaces = Array(9).fill(null);
 let scoreOfX = 0
 let scoreOfO = 0
 let gameOver = false
+let historyList = []
+let counter = 0
 
 const startGame = () => {
   boxes.forEach(box => box.addEventListener('click', boxClicked));
@@ -29,10 +30,11 @@ const startGame = () => {
 
 function boxClicked(e) {
   const id = e.target.id
-
+  counter++;
   if (!spaces[id]) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
+    historyList.push(JSON.parse(JSON.stringify(spaces)))
     // if 
 
     if (playerHasWon() !== false) {
@@ -96,4 +98,17 @@ function restart() {
 
 startGame()
 
-////////
+const previous = document.querySelector(".previous")
+const next = document.querySelector(".next")
+
+previous.addEventListener("click", () => {
+  counter--;
+  // boxes.forEach((box) => {
+  //   spaces.forEach((space) => {
+  //     box.textContent = historyList[counter -1][box]
+  //   })
+  // })
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].textContent = historyList[counter - 1][i]
+  }
+})
