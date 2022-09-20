@@ -104,19 +104,30 @@ const previous = document.querySelector(".previous")
 const next = document.querySelector(".next")
 
 previous.addEventListener("click", () => {
-  counter--;
-
-  for (let i = 0; i < boxes.length; i++) {
-    boxes[i].textContent = historyList[counter - 1][i]
+  if (counter > 1) {
+    {
+      counter--;
+      for (let i = 0; i < boxes.length; i++) {
+        boxes[i].textContent = historyList[counter - 1][i]
+      }
+    }
   }
-  boxes.forEach(box => {
-    box.style.backgroundColor = '';
-  })
 })
 
 next.addEventListener("click", () => {
-  counter++;
-  for (let i = 0; i < boxes.length; i++) {
-    boxes[i].textContent = historyList[counter - 1][i]
+  if (counter < historyList.length) {
+    {
+      counter++;
+      for (let i = 0; i < boxes.length; i++) {
+        boxes[i].textContent = historyList[counter - 1][i]
+      }
+    }
   }
 })
+
+// next.addEventListener("click", () => {
+//   counter++;
+//   for (let i = 0; i < boxes.length; i++) {
+//     boxes[i].textContent = historyList[counter - 1][i]
+//   }
+// })
