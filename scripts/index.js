@@ -1,10 +1,8 @@
 const playerText = document.querySelector('#playerText');
 const restartBtn = document.querySelector('#restartBtn');
 const boxes = document.querySelectorAll('.box');
-// const history = document.querySelector('#history');
 const newGameBtn = document.querySelector('.new-game');
 const moveHistory = document.querySelector('#moves > ol');
-// const moves = document.querySelector('#moves');
 const xScore = document.querySelector(".xScore")
 const oScore = document.querySelector(".oScore")
 
@@ -124,10 +122,3 @@ next.addEventListener("click", () => {
     }
   }
 })
-
-// next.addEventListener("click", () => {
-//   counter++;
-//   for (let i = 0; i < boxes.length; i++) {
-//     boxes[i].textContent = historyList[counter - 1][i]
-//   }
-// })
