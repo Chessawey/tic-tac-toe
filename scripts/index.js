@@ -9,8 +9,6 @@ const xScore = document.querySelector(".xScore")
 const oScore = document.querySelector(".oScore")
 
 
-// let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
-
 console.log(boxes);
 
 const O_TEXT = "O";
