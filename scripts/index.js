@@ -2,7 +2,6 @@ const playerText = document.querySelector('#playerText');
 const restartBtn = document.querySelector('#restartBtn');
 const boxes = document.querySelectorAll('.box');
 const newGameBtn = document.querySelector('.new-game');
-const moveHistory = document.querySelector('#moves > ol');
 const xScore = document.querySelector(".xScore")
 const oScore = document.querySelector(".oScore")
 
