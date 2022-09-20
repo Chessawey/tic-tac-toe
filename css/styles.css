@@ -5,9 +5,6 @@
   font-family: "Rajdhani", sans-serif;
 }
 
-:root {
-  --winning-blocks: #C3FF99;
-}
 
 body {
   background-image: url("/assets/bg-body.jpg");
